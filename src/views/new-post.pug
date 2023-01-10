@@ -1,0 +1,15 @@
+extend template
+block content
+    script(src=`${basePath}/js/new-post.js`)
+    
+    div
+        h1 Create new Post
+        input#title(type="text", name="Title", placeholder="Title")
+        br
+        textarea#content(name="Content", cols="60", rows="20")
+        br
+        button(type="submit" onClick="addPost()") Add new post
+    
+    div#back_div
+        button.btn.btn-primary.circle-button#back_button(type="button" onClick=`window.location.href = '/'`)
+            p ↩

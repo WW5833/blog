@@ -1,0 +1,16 @@
+extend template
+block content
+    script(src=`${basePath}/js/edit-post.js`)
+    
+    div
+        h1 Edit Post
+        input#title(type="text", name="Title", placeholder="Title" value=`${post.title}`)
+        br
+        textarea#content(name="Content", cols="60", rows="20")=post.content
+        br
+        button(type="submit" onClick=`editPost('${post._id}')`) Edit post
+    
+    
+    div#back_div
+        button.btn.btn-primary.circle-button#back_button(type="button" onClick=`window.location.href = '/post/${post._id}'`)
+            p ↩

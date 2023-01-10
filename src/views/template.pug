@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+    head
+        include head
+        title Blog
+        link(rel="stylesheet", href=`${basePath}/bootstrap/css/bootstrap.min.css`)
+        link(rel="stylesheet", href=`${basePath}/css/style.css`)
+        script(src=`${basePath}/jquery/jquery.min.js`)
+        script(src=`${basePath}/bootstrap/js/bootstrap.min.js`)
+    body 
+        div.header.sticky.top-0
+            button(onClick=`window.location.href="${basePath}/";`) 
+                h1#mainTitle This is funi blog 😀
+        div.contentBlock
+            block content
+                h1 THIS IS ONLY A TEMPLATE, SHOULD NEVER BE SHOWN
+        include footer

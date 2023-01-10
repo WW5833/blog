@@ -1,0 +1,16 @@
+extend template
+block content
+    script(src=`${basePath}/js/delete-post.js`)
+    
+    div
+        h1 Are you sure you want to delete this post?
+        hr
+        h2 
+            button(type="cancel" onClick=`window.history.back()`) No
+        hr
+        button(type="submit" onClick=`deletePost('${post._id}')`) Yes
+    
+    
+    div#back_div
+        button.btn.btn-primary.circle-button#back_button(type="button" onClick=`window.location.href = '/post/${post._id}'`)
+            p ↩

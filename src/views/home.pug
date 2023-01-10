@@ -1,0 +1,9 @@
+extend template
+block content
+    script(src="js/home.js")
+
+    div.container-fluid
+        div#posts
+        div#add_post_div
+            button.btn.btn-primary.circle-button#add_post_button(type="button" onClick="window.location.href = '/post/new'")
+                a(href="/post/new") ➕

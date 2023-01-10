@@ -1,0 +1,20 @@
+extend template
+block content
+    article
+        h1= post.title
+        
+        - var content = post.content;
+        - var lines = content.split('\n');
+        - var newContent = lines.join("<br>");
+        #{"p>" + newContent + "</p>"}
+        p= new Date(post.date).toLocaleString()
+    
+    div#back_div
+        button.btn.btn-primary.circle-button#back_button(type="button" onClick=`window.location.href = '/'`)
+            p ↩
+    div#edit_post_div
+        button.btn.btn-primary.circle-button.circle-button-small#edit_post_button(type="button" onClick=`window.location.href = '/post/${post._id}/edit'`)
+            p 📝
+    div#delete_post_div
+        button.btn.btn-primary.circle-button.circle-button-small#delete_post_button(type="button" onClick=`window.location.href = '/post/${post._id}/delete'`)
+            p 🗑
